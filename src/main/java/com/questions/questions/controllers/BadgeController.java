@@ -1,7 +1,6 @@
 package com.questions.questions.controllers;
 
 import com.questions.questions.models.Badge;
-import com.questions.questions.models.User;
 import com.questions.questions.services.BadgeService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -26,6 +25,7 @@ public class BadgeController {
     public void addBadge(Badge badge){
         badgeService.addNewBadge(badge);
     }
+
     @PostMapping(value="/badge")
     public void registerBadge(@RequestBody Badge badge){
         badgeService.addNewBadge(badge);

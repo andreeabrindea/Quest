@@ -1,0 +1,6 @@
+.submission{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+    
+}

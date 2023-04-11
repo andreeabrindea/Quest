@@ -1,0 +1,38 @@
+.addQuestionPage{
+    display: flex;
+    flex-direction: column;
+}
+.top{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+.form{
+    margin-top: 150px;
+    display: flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+}
+.form label {
+    display: block; 
+    margin-bottom: 10px;
+  }
+  
+  .form input {
+    display: inline-block; 
+    margin-bottom: 10px; 
+  }
+  .form input#description {
+    height: 100px; 
+    width: 300px; 
+  }
+  .form button {
+    display: block; 
+    margin-bottom: 10px; 
+    height: 20px; 
+    width: 100px; 
+
+  }
