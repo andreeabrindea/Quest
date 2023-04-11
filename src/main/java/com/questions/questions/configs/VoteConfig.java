@@ -12,7 +12,7 @@ public class VoteConfig {
     CommandLineRunner commandLineRunnerVote(VoteRepository voteRepository){
         return args -> {
             Vote vote = new Vote(52, 1, "like");
-            voteRepository.save(vote);
+            //voteRepository.save(vote);
         };
     }
 }

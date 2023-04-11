@@ -14,7 +14,7 @@ public class SubmissionConfig {
     CommandLineRunner commandLineRunnerSubmission(SubmissionRepository submissionRepository){
         return args -> {
            Submission submission = new Submission(52, 1, "This is my cat", LocalDate.now());
-           submissionRepository.save(submission);
+          // submissionRepository.save(submission);
         };
     }
 }

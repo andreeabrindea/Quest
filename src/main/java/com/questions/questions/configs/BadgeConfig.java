@@ -20,10 +20,7 @@ public class BadgeConfig {
     CommandLineRunner commandLineRunnerBadge(){
         return args -> {
             Badge badge = new Badge("New Member", "Welcome", "Let the cutest cat win");
-            badgeRepository.save(badge);
-            // Retrieve all badges from the repository and print them
-            List<Badge> badges = (List<Badge>) badgeRepository.findAll();
-            System.out.println(badges);
+            //badgeRepository.save(badge);
         };
     }
 }

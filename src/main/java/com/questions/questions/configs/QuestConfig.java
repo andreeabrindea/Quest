@@ -13,7 +13,7 @@ public class QuestConfig {
     CommandLineRunner commandLineRunnerQuest(QuestRepository questRepository){
         return args -> {
             Quest quest = new Quest("Cutest Cat", "Let the cutest cat win", 52, 5);
-            questRepository.save(quest);
+        //    questRepository.save(quest);
 
         };
 

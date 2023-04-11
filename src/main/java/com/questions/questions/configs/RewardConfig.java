@@ -13,7 +13,7 @@ public class RewardConfig {
     CommandLineRunner commandLineRunnerReward(RewardRepository rewardRepository){
         return args -> {
            Reward reward = new Reward(52, 1, 1);
-           rewardRepository.save(reward);
+          // rewardRepository.save(reward);
         };
 
     }

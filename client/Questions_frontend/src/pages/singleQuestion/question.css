@@ -1,0 +1,51 @@
+.question {
+    width: 300px;
+    margin-top: 5px;
+    margin-left: 30px;
+    margin-right: 70px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .imgPost {
+    width: 330px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 5px solid #3e6b69;
+  }
+  
+  .postInfo {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .questionTitle {
+    font-family: "EB Garamond", serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 15px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .postDate {
+    font-family: "EB Garamond", serif;
+    font-size: 13px;
+    color: #999;
+    margin-top: 5px;
+    text-align: right;
+  }
+  
+  .description {
+    font-family: "EB Garamond", serif;
+    font-size: 16px;
+    color: #444;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }

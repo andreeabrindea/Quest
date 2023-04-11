@@ -1,0 +1,8 @@
+.questions {
+    flex: 9;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 20px;
+    margin-left: 5px;
+    gap: 50px;
+  }

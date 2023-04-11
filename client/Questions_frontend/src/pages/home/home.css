@@ -1,0 +1,13 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center vertically */
+    align-items: center; /* center horizontally */
+}
+.top{
+    margin-bottom: 50px;
+}
+.center{
+    background-color: #6be2dc;
+    border-radius: 20px;
+}
