@@ -12,6 +12,9 @@ import java.time.LocalDate;
 public class SubmissionConfig {
     @Bean
     CommandLineRunner commandLineRunnerSubmission(SubmissionRepository submissionRepository){
-        return args -> new Submission(1, 1, 1, "This is my cat", LocalDate.now());
+        return args -> {
+           Submission submission = new Submission(52, 1, "This is my cat", LocalDate.now());
+           submissionRepository.save(submission);
+        };
     }
 }

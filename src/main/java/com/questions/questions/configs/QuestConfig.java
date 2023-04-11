@@ -11,6 +11,11 @@ import org.springframework.context.annotation.Configuration;
 public class QuestConfig {
     @Bean
     CommandLineRunner commandLineRunnerQuest(QuestRepository questRepository){
-        return args -> new Quest(1, "Cutest Cat", "Let the cutest cat win", 1, 5);
+        return args -> {
+            Quest quest = new Quest("Cutest Cat", "Let the cutest cat win", 52, 5);
+            questRepository.save(quest);
+
+        };
+
     }
 }

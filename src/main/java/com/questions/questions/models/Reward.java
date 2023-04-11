@@ -3,28 +3,23 @@ package com.questions.questions.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "rewards")
 public class Reward {
     @Id
-    @SequenceGenerator(
-            name = "reward_sequence",
-            sequenceName="reward_sequence",
-            allocationSize=1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "reward_sequence"
-    )
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="rewardId")
     private int rewardId;
+    @Column(name="userId")
     private int userId;
+    @Column(name = "badgeId")
     private int badgeId;
+    @Column(name="questId")
     private int questId;
 
     public Reward() {
     }
 
-    public Reward(int rewardId, int userId, int badgeId, int questId) {
-        this.rewardId = rewardId;
+    public Reward(int userId, int badgeId, int questId) {
         this.userId = userId;
         this.badgeId = badgeId;
         this.questId = questId;

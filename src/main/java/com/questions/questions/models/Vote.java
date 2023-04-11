@@ -3,28 +3,23 @@ package com.questions.questions.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "votes")
 public class Vote {
     @Id
-    @SequenceGenerator(
-            name = "vote_sequence",
-            sequenceName="vote_sequence",
-            allocationSize=1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "vote_sequence"
-    )
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "voteId")
     private int voteId;
+    @Column(name = "userId")
     private int userId;
+    @Column(name = "submissionId")
     private int submissionId;
+    @Column(name="details")
     private String details;
 
     public Vote() {
     }
 
-    public Vote(int voteId, int userId, int submissionId, String details) {
-        this.voteId = voteId;
+    public Vote(int userId, int submissionId, String details) {
         this.userId = userId;
         this.submissionId = submissionId;
         this.details = details;

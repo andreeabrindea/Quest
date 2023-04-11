@@ -10,6 +10,9 @@ import org.springframework.context.annotation.Configuration;
 public class VoteConfig {
     @Bean
     CommandLineRunner commandLineRunnerVote(VoteRepository voteRepository){
-        return args -> new Vote(1, 1, 1, "like");
+        return args -> {
+            Vote vote = new Vote(52, 1, "like");
+            voteRepository.save(vote);
+        };
     }
 }

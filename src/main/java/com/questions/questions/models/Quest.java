@@ -3,29 +3,25 @@ package com.questions.questions.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name = "quests")
 public class Quest {
     @Id
-    @SequenceGenerator(
-            name = "quest_sequence",
-            sequenceName="quest_sequence",
-            allocationSize=1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "quest_sequence"
-    )
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name="questId")
     private int questId;
+    @Column(name = "title")
     private String title;
+    @Column(name="description")
     private String description;
+    @Column(name="creator_id")
     private int creatorId;
+    @Column(name="fee")
     private int fee;
 
     public Quest() {
     }
 
-    public Quest(int questId, String title, String description, int creatorId, int fee) {
-        this.questId = questId;
+    public Quest(String title, String description, int creatorId, int fee) {
         this.title = title;
         this.description = description;
         this.creatorId = creatorId;

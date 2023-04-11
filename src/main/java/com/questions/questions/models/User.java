@@ -2,36 +2,35 @@ package com.questions.questions.models;
 
 import jakarta.persistence.*;
 
-@Entity(name = "users")
-@Table
+@Entity
+@Table(name = "users")
 public class User {
     @Id
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName="user_sequence",
-            allocationSize=1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "user_id")
     private int userId;
+
+    @Column(name="name")
     private String name;
+    @Column(name="password")
     private String password;
+
+    @Column(name="email")
     private String email;
+    @Column(name="tokens")
     private int tokens;
+    @Column(name="badge_id")
     private int badges;
 
-    public User(int userId, String name, String password, String email, int tokens, int badges) {
-        this.userId = userId;
+    public User() {
+    }
+
+    public User(String name, String password, String email, int tokens, int badges) {
         this.name = name;
         this.password = password;
         this.email = email;
         this.tokens = tokens;
         this.badges = badges;
-    }
-
-    public User() {
     }
 
     public int getUserId() {

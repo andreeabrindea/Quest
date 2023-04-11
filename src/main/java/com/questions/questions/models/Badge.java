@@ -3,35 +3,31 @@ package com.questions.questions.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table
+@Table(name="badges")
 public class Badge {
     @Id
-    @SequenceGenerator(
-            name = "badge_sequence",
-            sequenceName="badge_sequence",
-            allocationSize=1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "badge_sequence"
-    )
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    @Column(name = "badge_id")
     private int badgeId;
 
+    @Column(name="name")
     private String name;
+    @Column(name = "description")
     private String description;
+    @Column(name = "imageUrl")
     private String imageUrl;
 
-    public Badge() {
-    }
-
-    public Badge(int badgeId, String name, String description, String imageUrl) {
-        this.badgeId = badgeId;
+    public Badge(String name, String description, String imageUrl) {
         this.name = name;
         this.description = description;
         this.imageUrl = imageUrl;
     }
 
-    public int getBadgeId() {
+    public Badge() {
+
+    }
+
+    public long getBadgeId() {
         return badgeId;
     }
 
@@ -43,33 +39,14 @@ public class Badge {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
 
     @Override
     public String toString() {
         return "Badge{" +
                 "badgeId=" + badgeId +
-                ", name='" + name + '\'' +
-                ", description='" + description + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
+                ", name='" + name +
+                ", description='" + description +
+                ", imageUrl='" + imageUrl+
                 '}';
     }
 }

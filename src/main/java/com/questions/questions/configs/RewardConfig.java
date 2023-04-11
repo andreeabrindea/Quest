@@ -11,7 +11,10 @@ public class RewardConfig {
 
     @Bean
     CommandLineRunner commandLineRunnerReward(RewardRepository rewardRepository){
-        return args -> new Reward(1, 1, 1, 1);
+        return args -> {
+           Reward reward = new Reward(52, 1, 1);
+           rewardRepository.save(reward);
+        };
 
     }
 }
