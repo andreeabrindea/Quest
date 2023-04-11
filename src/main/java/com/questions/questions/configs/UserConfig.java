@@ -12,7 +12,7 @@ public class UserConfig {
     CommandLineRunner commandLineRunnerUser(UserRepository userRepository){
         return args -> {
             User user = new User("John", "1234","john@gmail.com" ,100, 52);
-            userRepository.save(user);
+           // userRepository.save(user);
         };
     }
 }

@@ -1,10 +1,8 @@
 package com.questions.questions.controllers;
 
-import com.questions.questions.models.Reward;
 import com.questions.questions.models.User;
 import com.questions.questions.services.UserService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,8 +15,13 @@ public class UserController {
     }
 
 
-    @RequestMapping("/users")
+    @RequestMapping(value="/users", method = RequestMethod.GET)
     public List<User> getUsers(){
         return userService.getUsers();
+    }
+
+    @PostMapping(value="/user")
+    public void registerUser(@RequestBody User user){
+        userService.addNewUser(user);
     }
 }

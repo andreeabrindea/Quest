@@ -3,6 +3,8 @@ package com.questions.questions.controllers;
 import com.questions.questions.models.User;
 import com.questions.questions.models.Vote;
 import com.questions.questions.services.VoteService;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +22,9 @@ public class VoteController {
     @RequestMapping("/votes")
     public List<Vote> getVotes(){
         return voteService.getVotes();
+    }
+    @PostMapping(value="/vote")
+    public void registerVote(@RequestBody Vote vote){
+        voteService.addNewVote(vote);
     }
 }
