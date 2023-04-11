@@ -11,3 +11,8 @@
     background-color: #6be2dc;
     border-radius: 20px;
 }
+
+.addQuestionPage{
+    display: flex;
+    flex-direction: column;
+}

@@ -8,10 +8,21 @@ export default function TopBar() {
         <div className="TOPBAR">
              <div className="topCenter">
         <ul className="TopList">
-          <li className="TopListItem">Home</li>
-          <li className="TopListItem">My Questions</li>
-          <li className="TopListItem">Add Question</li>
-          <li className="TopListItem">My Account</li>
+          <li className="TopListItem"><Link
+              className="link"
+              to="/"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >Home</Link></li>
+          <li className="TopListItem"><Link
+              className="link"
+              to="/addquestion"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >Add Question</Link></li>
+          <li className="TopListItem"><Link
+              className="link"
+              to="/addquestion"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >Register</Link></li>
         </ul>
       </div>
         </div>

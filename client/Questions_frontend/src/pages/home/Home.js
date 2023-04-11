@@ -16,13 +16,14 @@ export default function Home() {
     }, []);
 
     return (
-        <div className="home">
-        <div className="top">
-             <TopBar></TopBar></div>
-    
-        <div className="center">
-            <Questions questions={questions}/>
-        </div>
+        <div className="wrapper">
+            <div className="top">
+                <TopBar></TopBar></div>
+            <div className="home">
+            <div className="center">
+                <Questions questions={questions}/>
+                </div>
+                </div>
         </div>
 
     )
