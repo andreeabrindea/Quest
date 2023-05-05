@@ -36,11 +36,18 @@ public class UserController {
     @CrossOrigin(origins = "http://localhost:8080")
     public Object getUserById(@PathVariable("id") int id){
         return userService.getUserById(id);
-
     }
 
-
-
-
-
+    @PostMapping(value="/login")
+    @CrossOrigin(origins = "http://localhost:8080")
+    public ResponseEntity<String> login(@RequestBody JSONObject request) {
+        String name = request.getString("name");
+        String password = request.getString("password");
+        Optional<User> user = userService.login(name, password);
+        if (user.isPresent()) {
+            return ResponseEntity.ok("Login successful");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+        }
+    }
 }

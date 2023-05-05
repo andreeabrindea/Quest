@@ -39,4 +39,8 @@ public class UserService {
     public Optional<User> getUserByName(String name) {
         return userRepository.findByName(name);
     }
+    public Optional<User> login(String name, String password) {
+        return userRepository.findByNameAndPassword(name, password);
+    }
+
 }

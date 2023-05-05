@@ -28,4 +28,9 @@ public class SubmissionController {
     public void registerSubmission(@RequestBody Submission submission){
         submissionService.addNewSubmission(submission);
     }
+    @RequestMapping(value="/submission/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:8080")
+    public Object getSubmissionById(@PathVariable("id") int id){
+        return submissionService.getSubmissionById(id);
+    }
 }

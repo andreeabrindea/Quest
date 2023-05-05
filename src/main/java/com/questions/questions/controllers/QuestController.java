@@ -26,4 +26,9 @@ public class QuestController {
     public void registerQuest(@RequestBody Quest quest){
         questService.addNewQuest(quest);
     }
+    @RequestMapping(value="/quest/{id}", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:8080")
+    public Object getQuestById(@PathVariable("id") int id){
+        return questService.getQuestById(id);
+    }
 }
